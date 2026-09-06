@@ -1,0 +1,7 @@
+{
+  "name": "tungsten-price-collector",
+  "private": true,
+  "type": "module",
+  "scripts": {"collect": "node scripts/collect-tungsten-price.mjs"},
+  "dependencies": {"googleapis": "^156.0.0", "playwright": "^1.55.0"}
+}
