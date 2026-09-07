@@ -21,6 +21,6 @@ try {
   const now = new Date();
   const auth = new google.auth.GoogleAuth({ scopes: ["https://www.googleapis.com/auth/spreadsheets"] });
   const sheets = google.sheets({ version: "v4", auth });
-  await sheets.spreadsheets.values.append({ spreadsheetId: sheetId, range: "Sheet1!A1:F1", valueInputOption: "USER_ENTERED", insertDataOption: "INSERT_ROWS", requestBody: { values: [[now.toISOString(), data.price, data.change, data.changePercent, now.toISOString().slice(0, 10), url]] }});
+  await sheets.spreadsheets.values.append({ spreadsheetId: sheetId, range: "A:F", valueInputOption: "USER_ENTERED", insertDataOption: "INSERT_ROWS", requestBody: { values: [[now.toISOString(), data.price, data.change, data.changePercent, now.toISOString().slice(0, 10), url]] }});
   console.log(JSON.stringify({ ...data, timestamp: now.toISOString() }));
 } finally { await browser.close(); }
