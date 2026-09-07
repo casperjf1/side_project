@@ -4,7 +4,9 @@ on:
   schedule:
     - cron: "0 16 * * *"
       timezone: "Europe/Oslo"
-permissions: {}
+permissions:
+  contents: read
+  id-token: write
 jobs:
   collect:
     runs-on: ubuntu-latest
